@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MaseratiTCC.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MaseratiTCC"
+    BackgroundColor="#544ba0"
+    FlyoutBackgroundColor="White"
+
+
+ >
+
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" 
+        />
+
+    <FlyoutItem Title="Página Inicial">
+        <FlyoutItem.FlyoutIcon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="Android, iOS" Value="casa.png" />
+            </OnPlatform>
+        </FlyoutItem.FlyoutIcon>
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+
+
+    <FlyoutItem Title="Sair">
+        <FlyoutItem.FlyoutIcon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="Android, iOS" Value="sair.png" />
+            </OnPlatform>
+        </FlyoutItem.FlyoutIcon>
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+
+
+
+
+
+</Shell>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaseratiTCC.MainPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Background>
+        <RadialGradientBrush >
+            <GradientStopCollection>
+                <GradientStop Color="#0f9be8" Offset="0.0" />
+                <GradientStop Color="#544ba0" Offset="1.0" />
+            </GradientStopCollection>
+        </RadialGradientBrush>
+    </ContentPage.Background>
+
+
+    <StackLayout Margin="0,90,0,0">
+
+        <StackLayout Margin="290,-50,0,50">
+            <ImageButton x:Name="profileImageButton" Source="agatha.png" Aspect="AspectFill" Clicked="OnImageButtonClicked4" WidthRequest="75" HeightRequest="75" CornerRadius="35"/>
+        </StackLayout>
+
+        <Label Text="Serviços" TextColor="White" Padding="26,100,0,50" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+
+
+
+        <StackLayout Orientation="Vertical" Padding="12,-7,-10,0" HorizontalOptions="Center">
+            <CarouselView x:Name="carouselView" IndicatorView="indicatorView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <ImageButton Source="{Binding ImagePath}" Aspect="AspectFill" WidthRequest="250" HeightRequest="200" CornerRadius="40" HorizontalOptions="Center" 
+                                         Clicked="OnImageTapped"
+                                         Margin="10,20,20,0"
+                                         />
+
+                            <Label Text="{Binding Description}" HorizontalOptions="CenterAndExpand" FontSize="Medium"  TextColor="White" 
+                                   Margin="10,10,10,10"
+                                    />
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <ImageButton x:Name="previousButton" Source="setaesquerda.png" HeightRequest="50" WidthRequest="50" Margin="-10,-170,0,0" Clicked="OnPreviousButtonClicked" HorizontalOptions="Start" />
+
+            <ImageButton x:Name="nextButton" Source="setadireita.png" HeightRequest="50" WidthRequest="50" Margin="0,-50,10,0" Clicked="OnNextButtonClicked" HorizontalOptions="End" />
+
+
+            <IndicatorView x:Name="indicatorView" IndicatorSize="15" IndicatorColor="Gray" SelectedIndicatorColor="White" HorizontalOptions="Center" Margin="70,210,80,0"  />
+        </StackLayout>
+    </StackLayout>
+    
+
+
+</ContentPage>
